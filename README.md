@@ -1,5 +1,5 @@
 # java lab programs 
-## lab1 list interface demo
+## ListinterfaceDemo.java
 ### output
-![output]
+![ Program Output]
 (listinterfacedemo.output.png)
