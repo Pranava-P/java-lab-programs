@@ -18,3 +18,5 @@ https://github.com/user-attachments/assets/f1c7986b-646f-4e6f-9e15-1a8fa0b36c85
 p5_java.output
 https://github.com/user-attachments/assets/0d7a5a83-670a-4aac-9efb-c2398f0d9b0b
 
+p6_java.output
+https://github.com/user-attachments/assets/32baae3e-9331-45a2-b1fe-e5adfd3a5dca
