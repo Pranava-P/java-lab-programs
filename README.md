@@ -44,3 +44,7 @@ https://github.com/user-attachments/assets/1e47aaeb-4233-4f86-896f-c4cc394e6fdb
 
 swingexample_4a.output
 https://github.com/user-attachments/assets/cea5341f-c618-40c7-83a4-f06885939606
+
+stringbuilder_3b.output
+https://github.com/user-attachments/assets/3a7cf36a-bdb7-4a79-971a-140e09a70e06
+
