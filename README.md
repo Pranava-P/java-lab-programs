@@ -36,3 +36,7 @@ https://github.com/user-attachments/assets/b6dd9924-456f-4dff-b629-b13ffa3b5d83
 stringhandling_2a.output
 https://github.com/user-attachments/assets/8eea9cbc-991b-44d8-975e-13a59f9fba83
 
+performancetest_2b.output
+https://github.com/user-attachments/assets/36b66822-faeb-4c57-813f-7c19f86e324e
+
+
