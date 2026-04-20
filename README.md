@@ -23,3 +23,6 @@ https://github.com/user-attachments/assets/32baae3e-9331-45a2-b1fe-e5adfd3a5dca
 
 p7_java.output
 https://github.com/user-attachments/assets/51af21a1-b363-404b-a5d5-c895e0afb128
+
+p8_java.output
+https://github.com/user-attachments/assets/eedc5ebe-e3c2-418a-ad3a-05153cc51da6
