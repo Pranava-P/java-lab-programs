@@ -20,3 +20,6 @@ https://github.com/user-attachments/assets/0d7a5a83-670a-4aac-9efb-c2398f0d9b0b
 
 p6_java.output
 https://github.com/user-attachments/assets/32baae3e-9331-45a2-b1fe-e5adfd3a5dca
+
+p7_java.output
+https://github.com/user-attachments/assets/51af21a1-b363-404b-a5d5-c895e0afb128
