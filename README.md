@@ -56,3 +56,7 @@ https://github.com/user-attachments/assets/e15ea95f-f766-4f9c-a44b-d43adcdd42c5
 
 JList_5a.output
 https://github.com/user-attachments/assets/32d3f5bd-7120-4c23-a460-de38a2f5e6f1
+
+tabbedpane_5b.output
+https://github.com/user-attachments/assets/514ff6d5-efc1-4db2-8878-3497d0d6510e
+
