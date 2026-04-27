@@ -7,4 +7,5 @@ reservation_display.output https://github.com/user-attachments/assets/5ea437e3-0
 
 report_form.output https://github.com/user-attachments/assets/a16c9ba8-342d-4242-8084-c5dc652a42c1
 
+report_result.output https://github.com/user-attachments/assets/8e6015bb-e3ff-4355-99eb-d7e9ed4f4368
 
