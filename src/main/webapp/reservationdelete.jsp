@@ -1,12 +1,12 @@
 <%@ page language="java"
          contentType="text/html; charset=UTF-8"
-         import="java.util.*,model.Reservation" %>
+         import="java.util.*,model.Reservation,DAO.ReservationDAO" %>
 
 <!DOCTYPE html>
 <html>
 <head>
 
-<title>All Reservations</title>
+<title>Delete Reservation</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet">
@@ -16,6 +16,10 @@
 body{
     background: linear-gradient(to right, #1e3c72, #2a5298);
     color:white;
+}
+
+.card{
+    border-radius:15px;
 }
 
 .table-container{
@@ -29,6 +33,8 @@ body{
 </head>
 <body>
 
+<!-- NAVBAR -->
+
 <nav class="navbar navbar-dark bg-dark">
 
 <div class="container">
@@ -41,13 +47,67 @@ Hotel Management System
 
 </nav>
 
+<!-- DELETE FORM -->
+
 <div class="container mt-5">
 
+<div class="row justify-content-center">
+
+<div class="col-md-5">
+
+<div class="card p-4 text-dark">
+
 <h2 class="text-center mb-4">
-All Reservations
+Delete Reservation
 </h2>
 
+<form action="<%=request.getContextPath()%>/delete"
+      method="post"
+
+      onsubmit="return confirm(
+      'Are you sure you want to delete this reservation?'
+      )">
+
+<label>
+Reservation ID
+</label>
+
+<input type="number"
+       name="id"
+       class="form-control mb-3"
+       required>
+
+<button type="submit"
+        class="btn btn-danger w-100">
+
+Delete Reservation
+
+</button>
+
+<a href="<%=request.getContextPath()%>/index.jsp"
+   class="btn btn-secondary w-100 mt-3">
+
+Back To Home
+
+</a>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<br><br>
+
+<!-- TABLE -->
+
 <div class="table-container">
+
+<h3 class="text-dark mb-3">
+All Reservations
+</h3>
 
 <table class="table table-bordered table-hover">
 
@@ -56,11 +116,11 @@ All Reservations
 <tr>
 
 <th>ID</th>
-<th>Customer Name</th>
-<th>Room No</th>
+<th>Name</th>
+<th>Room</th>
 <th>Check In</th>
 <th>Check Out</th>
-<th>Total Amount</th>
+<th>Amount</th>
 
 </tr>
 
@@ -70,10 +130,11 @@ All Reservations
 
 <%
 
-List<Reservation> list =
-(List<Reservation>)request.getAttribute("list");
+ReservationDAO dao =
+        new ReservationDAO();
 
-if(list != null){
+List<Reservation> list =
+        dao.getAllReservations();
 
 for(Reservation r : list){
 
@@ -109,17 +170,11 @@ for(Reservation r : list){
 
 <%
 }
-}
 %>
 
 </tbody>
 
 </table>
-
-<a href="<%=request.getContextPath()%>/index.jsp"
-   class="btn btn-secondary">
-Back To Home
-</a>
 
 </div>
 

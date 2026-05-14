@@ -1,78 +1,202 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ page language="java"
+         contentType="text/html; charset=UTF-8"
+         import="java.sql.*" %>
+
+<%
+
+response.setHeader(
+        "Cache-Control",
+        "no-cache, no-store, must-revalidate"
+);
+
+response.setHeader(
+        "Pragma",
+        "no-cache"
+);
+
+response.setDateHeader(
+        "Expires",
+        0
+);
+
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Reservation</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>Add Reservation</title>
 
-    <style>
-        body {
-            background: linear-gradient(to right, #667eea, #764ba2);
-        }
-        .card {
-            border-radius: 15px;
-        }
-    </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<style>
+
+body{
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color:white;
+}
+
+.card{
+    border-radius:15px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.3);
+}
+
+</style>
+
 </head>
 <body>
 
-<!-- Navbar -->
+<%
+
+int nextId = 1;
+
+Connection con = null;
+
+try{
+
+    Class.forName(
+            "com.mysql.cj.jdbc.Driver"
+    );
+
+    con =
+        DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/hotel",
+            "root",
+            "080606"
+        );
+
+    Statement st =
+        con.createStatement();
+
+    ResultSet rs =
+        st.executeQuery(
+            "SELECT MAX(ReservationID) FROM Reservations"
+        );
+
+    if(rs.next()){
+
+        nextId =
+            rs.getInt(1) + 1;
+    }
+
+    con.close();
+}
+
+catch(Exception e){
+
+    e.printStackTrace();
+}
+
+%>
+
+<!-- NAVBAR -->
+
 <nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="index.jsp">Hotel System</a>
-    </div>
+
+<div class="container">
+
+<span class="navbar-brand mb-0 h1">
+Hotel Management System
+</span>
+
+</div>
+
 </nav>
 
-<!-- Form Section -->
-<div class="container d-flex justify-content-center align-items-center" style="height: 85vh;">
+<!-- FORM -->
 
-    <div class="card p-4 shadow" style="width: 450px;">
-        <h3 class="text-center mb-4">Add Reservation</h3>
+<div class="container mt-5">
 
-        <form action="add" method="post">
+<div class="row justify-content-center">
 
-            <div class="mb-3">
-                <label class="form-label">Reservation ID</label>
-                <input type="number" name="id" class="form-control" required>
-            </div>
+<div class="col-md-6">
 
-            <div class="mb-3">
-                <label class="form-label">Customer Name</label>
-                <input type="text" name="name" class="form-control" required>
-            </div>
+<div class="card p-4 text-dark">
 
-            <div class="mb-3">
-                <label class="form-label">Room Number</label>
-                <input type="text" name="room" class="form-control">
-            </div>
+<h2 class="text-center mb-4">
+Add Reservation
+</h2>
 
-            <div class="mb-3">
-                <label class="form-label">Check-In Date</label>
-                <input type="date" name="checkin" class="form-control">
-            </div>
+<form action="<%=request.getContextPath()%>/add"
+      method="post">
 
-            <div class="mb-3">
-                <label class="form-label">Check-Out Date</label>
-                <input type="date" name="checkout" class="form-control">
-            </div>
+<label>
+Reservation ID
+</label>
 
-            <div class="mb-3">
-                <label class="form-label">Total Amount (₹)</label>
-                <input type="number" name="amount" class="form-control" min="0">
-            </div>
+<input type="text"
+       class="form-control mb-3"
+       value="<%= nextId %>"
+       readonly>
 
-            <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Add Reservation</button>
-            </div>
+<label>
+Customer Name
+</label>
 
-            <div class="text-center mt-3">
-                <a href="index.jsp" class="btn btn-secondary">Back</a>
-            </div>
+<input type="text"
+       name="name"
+       class="form-control mb-3"
+       required>
 
-        </form>
-    </div>
+<label>
+Room Number
+</label>
+
+<input type="number"
+       name="room"
+       class="form-control mb-3"
+       required>
+
+<label>
+Check In
+</label>
+
+<input type="date"
+       name="checkin"
+       class="form-control mb-3"
+       required>
+
+<label>
+Check Out
+</label>
+
+<input type="date"
+       name="checkout"
+       class="form-control mb-3"
+       required>
+
+<label>
+Total Amount
+</label>
+
+<input type="number"
+       step="0.01"
+       name="amount"
+       class="form-control mb-3"
+       required>
+
+<button type="submit"
+        class="btn btn-primary w-100">
+
+Add Reservation
+
+</button>
+
+<a href="<%=request.getContextPath()%>/index.jsp"
+   class="btn btn-secondary w-100 mt-3">
+
+Back To Home
+
+</a>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
