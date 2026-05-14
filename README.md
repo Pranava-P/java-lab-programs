@@ -1,7 +1,5 @@
-# java lab1 programs 
-## ListinterfaceDemo.java
-### output
-![Program Output](listinterfacedemo.output.png)
+lab1 listinterface output<img https://github.com/user-attachments/assets/38acb3cb-0558-46ab-8d22-ea9b7b2e3ef6
+
 
 p1_java.output
 https://github.com/user-attachments/assets/624d2e4f-4556-4bb3-ba23-20acbc819b70
